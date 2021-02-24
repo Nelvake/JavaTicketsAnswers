@@ -30,4 +30,15 @@ flatmap() — возвращает множество в виде стрима.
 - Дополнительный монитор
 - Гибкий захват ресурсов (java.util.concurrent.locks.Lock – tryLock, wait time lock)
 
-3. // TODO Узнать для чего способы внедрения.
+3. 
+• Конструктор (как советует официальная документация).  Поставить аннотацию @Autowired над конструктором.
+• Сеттер. Поставить аннотацию @Autowired над сеттером.
+• Поле(field) или свойство(property). Поставить аннотацию @Autowired над полем или над свойством.
+
+То же самое, но в xml:
+1. <bean class="ru.javalang.injection.<Название класса>">
+    <constructor-arg ref="engine" />
+</bean>
+2.  <bean class="ru.javalang.injection.<Название класса>">
+    <property name="engine" ref="engine" />
+</bean>
